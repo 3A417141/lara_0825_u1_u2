@@ -10,14 +10,14 @@
 |
 */
 Route::get('/', function () {
-    \App\Post::create([
-        'title'=>'test title',
-        'content'=>'test content',
-    ]);
-//    \App\Post::create([
-//        'title'=>'test title',
-//        'content'=>'test content'
-//    ]);
+    //\App\Post::create([
+    //    'title'=>'test title',
+    //    'content'=>'test content',
+    //]);
+    $post = new \App\Post();
+    $post -> title = 'test title';
+    $post -> content = 'test content';
+    $post -> save();
 //    $post = new \App\Post();
 //    $post->title = 'test title2';
 //    $post->content = 'test content2';
@@ -30,10 +30,10 @@ Route::get('/', function () {
 //
 //    $posts = \App\Post::all();
 //    dd($posts);
-    $post = \App\Post::find(1);
-    foreach($post->comments as $comment) {
-        echo $comment->title.'<br>';
-    }
+//    $post = \App\Post::find(1);
+//    foreach($post->comments as $comment) {
+//        echo $comment->title.'<br>';
+//    }
 //    return view('welcome');
 });
 Route::get('/home', 'HomeController@index');
