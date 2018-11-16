@@ -32,11 +32,15 @@ Route::get('/', function () {
     //$post=\App\Post::find(1);
     //$post -> delete();
     //\App\Post::destroy(2);
-    \App\Post::destroy(3,5,7);
-//    $post = \App\Post::find(1);
-//    foreach($post->comments as $comment) {
-//        echo $comment->title.'<br>';
-//    }
+    //\App\Post::destroy(3,5,7);
+    //$allPosts=\App\Post::all();
+    //dd($allPosts);
+    //$featuredPosts=\App\Post::where('is_feature',1) ->get();
+    //dd($featuredPosts);
+    $fourthPost=\App\Post::find(4);
+    dd($fourthPost);
+    $lastPost=\App\Post::orderBy('id','DESC') ->first();
+    dd($lastPost);
 //    return view('welcome');
 });
 Route::get('/home', 'HomeController@index');
