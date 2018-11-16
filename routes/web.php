@@ -18,6 +18,10 @@ Route::get('/', function () {
     //$post -> title = 'minmin257';
     //$post -> content = 'I finally compelete';
     //$post -> save();
+    $post = new \App\Comment();
+    $post -> title = 'minmin257';
+    $post -> content = 'I am so sad';
+    $post -> save();
     //$postS = \App\Post::where('id','<',10)->orderBy('id','DESC')->get();
     //dd($postS);
     //$post=\App\Post::find(1);
@@ -37,11 +41,11 @@ Route::get('/', function () {
     //dd($allPosts);
     //$featuredPosts=\App\Post::where('is_feature',1) ->get();
     //dd($featuredPosts);
-    $fourthPost=\App\Post::find(4);
-    dd($fourthPost);
-    $lastPost=\App\Post::orderBy('id','DESC') ->first();
-    dd($lastPost);
-//    return view('welcome');
+    //$fourthPost=\App\Post::find(4);
+    //dd($fourthPost);
+    //$lastPost=\App\Post::orderBy('id','DESC') ->first();
+    //dd($lastPost);
+    //return view('welcome');
 });
 Route::get('/home', 'HomeController@index');
 Route::get('/hello/{name?}', ['as'=>'hello.index', 'uses'=>'HelloController@index']);
